@@ -1,0 +1,28 @@
+version: "3.7"
+services:
+  gitea:
+    build:
+      context: "./images/gitea"
+    container_name: "gitea"
+    ports:
+      - 3000:3000
+  mysql:
+    build:
+      context: "./images/mariadb"
+    container_name: "mysql"
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_DATABASE: covergates
+      MYSQL_USER: covergates
+      MYSQL_PASSWORD: covergates
+    ports:
+      - "3306:3306"
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    environment:
+      POSTGRES_DB: covergates
+      POSTGRES_USER: covergates
+      POSTGRES_PASSWORD: covergates
+    ports:
+      - 5432:5432
