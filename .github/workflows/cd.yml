@@ -33,6 +33,7 @@ jobs:
           context: ./images/gitea
           file: ./images/gitea/Dockerfile
           platforms: linux/amd64
+          push: true
 
       - name: Build MySQL
         uses: docker/build-push-action@v2
@@ -41,6 +42,7 @@ jobs:
           context: ./images/mariadb
           file: ./images/mariadb/Dockerfile
           platforms: linux/amd64
+          push: true
 
       - name: Build Covergates
         uses: docker/build-push-action@v2
@@ -49,3 +51,4 @@ jobs:
           context: ./images/covergates
           file: ./images/covergates/Dockerfile
           platforms: linux/amd64
+          push: true
