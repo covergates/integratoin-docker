@@ -31,6 +31,7 @@ jobs:
         with:
           tags: covergates/test-gitea:latest
           context: ./images/gitea
+          file: ./images/gitea/Dockerfile
           platforms: linux/amd64,linux/arm64,linux/arm/v7
 
       - name: Build MySQL
@@ -38,6 +39,7 @@ jobs:
         with:
           tags: covergates/test-mysql:latest
           context: ./images/mariadb
+          file: ./images/mariadb/Dockerfile
           platforms: linux/amd64,linux/arm64,linux/arm/v7
 
       - name: Build Covergates
@@ -45,4 +47,5 @@ jobs:
         with:
           tags: covergates/test-covergates:latest
           context: ./images/covergates
+          file: ./images/covergates/Dockerfile
           platforms: linux/amd64,linux/arm64,linux/arm/v7
