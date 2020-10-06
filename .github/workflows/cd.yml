@@ -32,7 +32,7 @@ jobs:
           tags: covergates/test-gitea:latest
           context: ./images/gitea
           file: ./images/gitea/Dockerfile
-          platforms: linux/amd64,linux/arm64,linux/arm/v7
+          platforms: linux/amd64
 
       - name: Build MySQL
         uses: docker/build-push-action@v2
@@ -40,7 +40,7 @@ jobs:
           tags: covergates/test-mysql:latest
           context: ./images/mariadb
           file: ./images/mariadb/Dockerfile
-          platforms: linux/amd64,linux/arm64,linux/arm/v7
+          platforms: linux/amd64
 
       - name: Build Covergates
         uses: docker/build-push-action@v2
@@ -48,4 +48,4 @@ jobs:
           tags: covergates/test-covergates:latest
           context: ./images/covergates
           file: ./images/covergates/Dockerfile
-          platforms: linux/amd64,linux/arm64,linux/arm/v7
+          platforms: linux/amd64
